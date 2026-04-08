@@ -4,26 +4,17 @@ on: [push, pull_request]
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    env:
-      # Убираем предупреждения о версии Node.js
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Install dependencies
-        # Устанавливаем зависимости вручную в нужной папке
-        run: npm install
-        working-directory: part1_cypress
 
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           working-directory: part1_cypress
-          # Указываем экшену не пытаться устанавливать зависимости самому
-          install: false
           browser: chrome
         env:
+          # Все переменные пробрасываем здесь
           CYPRESS_username: "standard_user"
           CYPRESS_password: "secret_sauce"
           REQRES_API_KEY: "pub_aec5f6bc8151341cd5ee0a3ebf91e383151f67356b4aecb86dc5784322c81a44"
