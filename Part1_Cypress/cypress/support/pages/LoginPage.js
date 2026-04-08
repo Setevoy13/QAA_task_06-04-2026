@@ -14,8 +14,8 @@ export class LoginPage {
   }
 
   login(username, password) {
-    this.usernameInput.type(username);
-    this.passwordInput.type(password);
+    this.usernameInput.should("be.visible").type(username);
+    this.passwordInput.should("be.visible").type(password);
     this.loginButton.click();
   }
 }

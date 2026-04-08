@@ -1,30 +1,25 @@
 import { defineConfig } from "cypress";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export default defineConfig({
   e2e: {
-    // Базовый URL (требование по Environment-based configuration)
     baseUrl: "https://saucedemo.com",
 
-    // Автоматические скриншоты при падении (требование Failure Diagnostics)
+    // Failure diagnostics
     screenshotOnRunFailure: true,
-
-    // Отключаем видео, чтобы тесты бегали быстрее (Senior-подход)
     video: false,
-
-    setupNodeEvents(on, config) {
-      // Здесь можно будет настроить отчеты (например, Allure), если захочешь
-    },
   },
 
-  // Переменные окружения для credentials (требование ТЗ)
+  // Credentials
   env: {
     username: "standard_user",
     password: "secret_sauce",
-    // Вставьте ваш публичный ключ сюда
-    reqres_api_key:
-      "pub_aec5f6bc8151341cd5ee0a3ebf91e383151f67356b4aecb86dc5784322c81a44",
+    reqresApiUrl: process.env.REQRES_API_URL,
+    reqresApiKey: process.env.REQRES_API_KEY,
   },
 
-  // Настройка стабильности (увеличим дефолтный таймаут для слабых CI)
+  // Stability setup for a weak CI
   defaultCommandTimeout: 10000,
 });

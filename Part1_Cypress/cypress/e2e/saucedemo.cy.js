@@ -17,6 +17,7 @@ describe("Part 1 — SauceDemo UI & Network Validation", () => {
     const pass = Cypress.env("password");
 
     loginPage.login(user, pass);
+    cy.url().should("include", "/inventory.html");
 
     // TASK 2: Ждем перехвата запроса аналитики
     // Нам не важно, какой там статус (даже если 401), главное, что запрос БЫЛ отправлен

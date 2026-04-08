@@ -1,10 +1,11 @@
 describe("Task 3 — API Test (ReqRes)", () => {
   it("should validate GET /api/users?page=2", () => {
-    const apiKey = Cypress.env("reqres_api_key");
+    const apiUrl = Cypress.env("reqresApiUrl");
+    const apiKey = Cypress.env("reqresApiKey");
     // ВАЖНО для Senior: Полный URL без привязки к baseUrl из конфига
     cy.request({
       method: "GET",
-      url: "https://reqres.in/api/users?page=2",
+      url: apiUrl,
       headers: {
         "x-api-key": apiKey,
         Accept: "application/json",

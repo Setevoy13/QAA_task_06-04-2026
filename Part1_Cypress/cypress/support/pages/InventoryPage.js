@@ -1,12 +1,12 @@
 export class InventoryPage {
   get inventoryList() {
-    return cy.get(".inventory_list");
+    return cy.get('[data-test="inventory-list"]');
   }
   get addToCartButtons() {
     return cy.get(".btn_inventory");
   }
   get cartBadge() {
-    return cy.get(".shopping_cart_badge");
+    return cy.get('[data-test="shopping-cart-badge"]');
   }
 
   addAnyProduct() {
