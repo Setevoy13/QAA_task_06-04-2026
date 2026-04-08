@@ -1,0 +1,21 @@
+{
+  "name": "part1_cypress",
+  "version": "1.0.0",
+  "description": "Technical Assignment Part 1 - Cypress",
+  "type": "module",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "npm run cy:run"
+  },
+  "keywords": [
+    "cypress",
+    "automation",
+    "testing"
+  ],
+  "author": "Sergey",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^15.13.0"
+  }
+}

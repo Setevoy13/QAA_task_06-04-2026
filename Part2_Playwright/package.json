@@ -1,0 +1,21 @@
+{
+  "name": "part2_playwright",
+  "version": "1.0.0",
+  "description": "Technical Assignment Part 2 - Playwright",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "report": "npx playwright show-report"
+  },
+  "keywords": [],
+  "author": "Sergey Borzenkov",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.5.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.1"
+  }
+}
