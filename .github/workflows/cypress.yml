@@ -12,6 +12,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           working-directory: part1_cypress
+          install-command: npm install
           browser: chrome
         env:
           CYPRESS_username: "standard_user"
