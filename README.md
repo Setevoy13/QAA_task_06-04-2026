@@ -22,16 +22,14 @@ This project contains two test suites:
 1. `cd part1_cypress`
 2. `npm install`
 3. `npx cypress install`
-4. `npm install dotenv`
-5. `npm test` (headless mode) or `npm run cy:open` (interactive)
+4. `npm test` (headless mode) or `npm run cy:open` (interactive)
 
 ### Running Playwright Tests
 
 1. `cd part2_playwright`
 2. `npm install`
 3. `npx playwright install`
-4. `npm install dotenv`
-5. `npm test`
+4. `npm test`
 
 ---
 
