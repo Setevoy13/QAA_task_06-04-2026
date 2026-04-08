@@ -1,0 +1,20 @@
+name: Cypress Tests
+on: [push, pull_request]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: part1_cypress
+          browser: chrome
+        env:
+          CYPRESS_username: "standard_user"
+          CYPRESS_password: "secret_sauce"
+          REQRES_API_KEY: "pub_aec5f6bc8151341cd5ee0a3ebf91e383151f67356b4aecb86dc5784322c81a44"
+          REQRES_API_URL: "https://reqres.in/api/users?page=2"

@@ -41,7 +41,8 @@ export class PracticeFormPage {
   }
 
   async submit() {
-    // Используем force: true или прокрутку, если стандартный клик не проходит из-за верстки
+    // We can use force true or "scrollIntoViewIfNeeded" in case if the element id hidden
+    await this.submitButton.scrollIntoViewIfNeeded();
     await this.submitButton.click();
   }
 }

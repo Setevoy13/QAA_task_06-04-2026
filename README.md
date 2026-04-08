@@ -21,14 +21,17 @@ This project contains two test suites:
 
 1. `cd part1_cypress`
 2. `npm install`
-3. `npm test` (headless mode) or `npm run cy:open` (interactive)
+3. `npx cypress install`
+4. `npm install dotenv`
+5. `npm test` (headless mode) or `npm run cy:open` (interactive)
 
 ### Running Playwright Tests
 
 1. `cd part2_playwright`
 2. `npm install`
 3. `npx playwright install`
-4. `npm test`
+4. `npm install dotenv`
+5. `npm test`
 
 ---
 
@@ -70,7 +73,7 @@ A balanced CI/CD strategy optimizes feedback loops:
 
 ---
 
-## Failure Diagnostics (Task 7)
+## Failure Diagnostics
 
 - **Cypress**: Configured to capture screenshots on failure (`screenshotOnRunFailure: true`).
-- **Playwright**: Configured with `trace: 'on-first-retry'`, `screenshot: 'only-on-failure'`, and `video: 'retain-on-failure'` in `playwright.config.ts`.
+- **Playwright**: Configured with `trace: 'retain-on-failure'`, `screenshot: 'only-on-failure'`, and `video: 'retain-on-failure'` in `playwright.config.ts`.

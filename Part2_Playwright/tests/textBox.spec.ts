@@ -5,7 +5,7 @@ test.describe("Task 4 — Text Box Form", () => {
   test("should fill and submit the form correctly", async ({ page }) => {
     const textBoxPage = new TextBoxPage(page);
 
-    // Данные для теста (можно вынести в константы)
+    // Test data
     const testData = {
       fullName: "John Doe",
       email: "john@example.com",
@@ -15,7 +15,7 @@ test.describe("Task 4 — Text Box Form", () => {
 
     await textBoxPage.goto();
 
-    // Заполняем форму через метод Page Object
+    // Fill form
     await textBoxPage.fillForm(
       testData.fullName,
       testData.email,
@@ -23,8 +23,7 @@ test.describe("Task 4 — Text Box Form", () => {
       testData.permanentAddress,
     );
 
-    // TASK 4: Используем built-in Playwright expectations
-    // Проверяем, что блок с результатом появился и содержит верные данные
+    // Data validation on result
     const output = page.locator("#output");
 
     await expect(output).toBeVisible();

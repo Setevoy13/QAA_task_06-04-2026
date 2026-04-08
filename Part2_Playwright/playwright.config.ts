@@ -12,17 +12,16 @@ export default defineConfig({
 
   use: {
     baseURL: "https://demoqa.com",
-    // 2. Настройка диагностики (Task 7)
-    // 'on-first-retry' запишет трассировку только когда тест упал и пошел на пересдачу
-    trace: "on-first-retry",
+    // Failure diagnostics
+    trace: "retain-on-failure",
     screenshot: "only-on-failure",
     video: "retain-on-failure",
 
-    // Установим таймаут для действий (клик, ввод текста)
+    // Actions timeout
     actionTimeout: 10000,
   },
 
-  // Тайм-аут для всего теста (30 секунд - стандарт)
+  // General timeout
   timeout: 30000,
 
   projects: [
