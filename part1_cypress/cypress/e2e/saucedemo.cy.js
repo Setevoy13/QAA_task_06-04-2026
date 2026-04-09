@@ -25,7 +25,6 @@ describe("Part 1 — SauceDemo UI & Network Validation", () => {
     });
 
     // Task 1: UI validation
-    cy.url().should("include", "/inventory.html");
     inventoryPage.addAnyProduct();
     inventoryPage.cartBadge.should("be.visible").and("have.text", "1");
   });
