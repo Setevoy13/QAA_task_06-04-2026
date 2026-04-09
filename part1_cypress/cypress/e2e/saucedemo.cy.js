@@ -6,7 +6,7 @@ describe("Part 1 — SauceDemo UI & Network Validation", () => {
   const inventoryPage = new InventoryPage();
 
   beforeEach(() => {
-    //request interception
+    //initialization of POST listener
     cy.intercept("POST", "**/events.backtrace.io/**").as("analyticsRequest");
 
     loginPage.visit();
@@ -19,6 +19,7 @@ describe("Part 1 — SauceDemo UI & Network Validation", () => {
     loginPage.login(user, pass);
     cy.url().should("include", "/inventory.html");
 
+    //waiting for network to intercept
     cy.wait("@analyticsRequest").then((interception) => {
       //Task 2: Interception validation
       expect(interception.request.body).to.exist;
