@@ -22,7 +22,7 @@ This project contains two test suites:
 1. `cd part1_cypress`
 2. `npm install`
 3. `npx cypress install`
-4. `npm test` (headless mode) or `npm run cy:open` (interactive)
+4. `npm test` (headless mode) or `npx cypress open` (interactive)
 
 ### Running Playwright Tests
 
